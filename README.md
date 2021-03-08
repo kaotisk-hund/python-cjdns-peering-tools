@@ -19,4 +19,4 @@ You should manually change `0.0.0.0` to your public IP4. #TODO Script for that
 ## `peers.json`
 File with peering information. 
 
-Can be used with https://github.com/hyperboria/peers
+You can use https://github.com/hyperboria/peers to generate `peers.json`
