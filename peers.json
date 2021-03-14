@@ -1,0 +1,14 @@
+{
+	"95.216.159.63:12786": {
+		"login": "default-login",
+		"password": "l0fgl9qkujmw6rh22w6knbwcc7x4t64",
+		"publicKey": "ppxv6z0dunqsnv9n4qnw9vjzg1yr2w82hxhk6mx82vlkcc7vmhg0.k",
+		"peerName": "akr-hels"
+	},
+	"37.139.23.136:37426": {
+		"login": "default-login",
+		"password":"y48r9hc8knyv8c8nllwkdrlbu78gyk8",
+		"publicKey":"c234cc44q0w1yfs1rf86vltdu1l700xy1dl8q86ymxc1g7fqddz0.k",
+		"peerName":"akr-hams"
+	}
+}
