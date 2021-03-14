@@ -2,6 +2,15 @@
 
 A small collection of tools for generating and importing peering information through python scripts.
 
+## Usage
+On your terminal, go!
+
+```
+git clone https://git.arching-kaos.net/kaotisk/python-cjdns-peering-tools.git
+cd python-cjdns-peering-tools
+sudo ./gen.sh
+```
+
 ## `appendPeers.py`
 It's the script that gets a `cjdroute.conf` and `peers.json` to append IP4 peers to configuration file.
 
