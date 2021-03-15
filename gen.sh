@@ -1,18 +1,19 @@
-#!/bin/sh
-# Previous implementation
-#cjdroute --genconf > cjdroute.json
-#grep -v '^\s*//\|^\s*$' cjdroute.json > cjdroute-nc.json
-#perl -p0e 's!/\*.*?\*/!!sg' cjdroute-nc.json > cjdroute.conf
+#!/bin/bash
 
-# Nowadays :)
+# Nowadays :) <- we keep this in order to learn something valueable, soon to be deleted!
 #cjdroute --genconf | sed -n '/^\/\*.*\*\//!p' | sed -n '/ \/\/.*/!p' | sed 's|/\*|\n&|g;s|*/|&\n|g' | sed '/\/\*/,/*\//d' > cjdroute.conf
 
 # Futuristic way B-)
-sudo dnf install cjdns-tools -y
-sudo systemctl start cjdns
-sudo systemctl stop cjdns
-cjdroute --genconf | cjdroute --cleanconf > cjdroute.conf
+echo "gen.sh - Peering tools"
+echo "Checking for existing configuration (WARNING!! All comments will be stripped)"
+if [ -f /etc/cjdroute.conf ] then
+	cat /etc/cjdroute.conf | cjdroute --clean > cjdroute.conf
+else
+	cjdroute --genconf | cjdroute --cleanconf > cjdroute.conf
+fi
 python appendPeers.py
-sudo cat cjdroute.conf > /etc/cjdroute.conf
-sudo systemctl enable cjdns
-sudo systemctl start cjdns
+cat cjdroute.conf > /etc/cjdroute.conf
+echo "Restart cjdns to get the new configuration up..."
+systemctl restart cjdns
+
+echo "Suppose it's done!"
