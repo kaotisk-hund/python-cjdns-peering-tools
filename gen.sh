@@ -7,7 +7,7 @@
 echo "gen.sh - Peering tools"
 echo "Checking for existing configuration (WARNING!! All comments will be stripped)"
 if [ -f /etc/cjdroute.conf ] then
-	cat /etc/cjdroute.conf | cjdroute --clean > cjdroute.conf
+	cat /etc/cjdroute.conf | cjdroute --cleanconf > cjdroute.conf
 else
 	cjdroute --genconf | cjdroute --cleanconf > cjdroute.conf
 fi
