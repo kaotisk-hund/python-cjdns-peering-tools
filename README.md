@@ -5,11 +5,40 @@ A small collection of tools for generating and importing peering information thr
 ## Usage
 On your terminal, go!
 
+### Clone the repository
+
+Either from:
+- github
+```
+git clone https://github.com/kaotisk-hund/python-cjdns-peering-tools.git
+```
+- arching-kaos.net
 ```
 git clone https://git.arching-kaos.net/kaotisk/python-cjdns-peering-tools.git
+```
+- cjdns
+```
+git clone http://git.kaotisk-hund.com/kaotisk/python-cjdns-peering-tools.git
+```
+and then cd to it:
+```
 cd python-cjdns-peering-tools
+```
+
+### Install peers from `peers.json` file:
+
+The following script is going to either generate or clean off comments your configuration file,
+execute the python script `appendPeers.py`, which will add `peers.json` to your file and install
+to default place (/etc/cjdroute.conf). It also restart cjdns for the configuration to be applied.
+```
 sudo ./gen.sh
 ```
+### Configure new user for peering
+
+```
+sudo ./peer_info_generate.sh
+```
+
 ## Files
 
 ### `appendPeers.py`
@@ -20,6 +49,10 @@ Different ways to generate a `cjdroute.conf` with no comments so we can work wit
 
 ### `peer_info_generate.py`
 Script that creates a user and a password in `authorizedPasswords` and generates `peer_info_generated.json` file.
+
+### `peer_info_generate.sh`
+Script that makes a backup of the running ( default /etc/cjdroute.conf ) configuration, executes `peer_info_generate.py`,
+pushes the new credentials to your configuration and restart cjdns.
 
 ### `peer_info_generated.json`
 This is a generated file by `peer_info_generate.py` which contains the peering information for someone to connect to your node.
