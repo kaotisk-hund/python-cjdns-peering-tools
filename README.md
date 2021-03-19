@@ -35,9 +35,12 @@ sudo ./gen.sh
 ```
 ### Configure new user for peering
 
+Configure a username and a password for a cjdns peer to connect with you. The output file is stored
+at `peer_info_generated.json`.
 ```
 sudo ./peer_info_generate.sh
 ```
+You can now open `peer_info_generated.json` and edit the IP before sending to your new peer.
 
 ## Files
 
