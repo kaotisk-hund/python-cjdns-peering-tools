@@ -40,7 +40,8 @@ at `peer_info_generated.json`.
 ```
 sudo ./peer_info_generate.sh
 ```
-You can now open `peer_info_generated.json` and edit the IP before sending to your new peer.
+You can now open `peer_info_generated.json` and edit the IP before sending to your new peer so it
+matches your public one.
 
 ## Files
 
