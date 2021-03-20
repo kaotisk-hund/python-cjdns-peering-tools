@@ -2,6 +2,11 @@
 
 A small collection of tools for generating and importing peering information through python scripts.
 
+## Requirments
+- SystemD (soon openrc compatible as well)
+- Python >3.8
+- cjdns installed
+
 ## Usage
 On your terminal, go!
 
