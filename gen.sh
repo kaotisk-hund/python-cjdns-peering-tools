@@ -6,10 +6,10 @@
 # Futuristic way B-)
 echo "gen.sh - Peering tools"
 echo "Checking for existing configuration (WARNING!! All comments will be stripped)"
-if [ -f /etc/cjdroute.conf ] then
-	cat /etc/cjdroute.conf | cjdroute --cleanconf > cjdroute.conf
+if [ -f /etc/cjdroute.conf ]; then
+	cat /etc/cjdroute.conf > /etc/cjdroute.conf-back && cat /etc/cjdroute.conf | cjdroute --cleanconf > cjdroute.conf;
 else
-	cjdroute --genconf | cjdroute --cleanconf > cjdroute.conf
+	cjdroute --genconf | cjdroute --cleanconf > cjdroute.conf;
 fi
 python appendPeers.py
 cat cjdroute.conf > /etc/cjdroute.conf

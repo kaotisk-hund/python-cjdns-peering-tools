@@ -10,7 +10,7 @@ with open('cjdroute.conf') as json_file:
     temp3 = temp2[0]
     temp4 = temp3['connectTo']
     with open('peers.json') as peers:
-        peers = json.load(peers)
-        temp4.update(peers)
+        peer = json.load(peers)
+        temp4.update(peer)
 
 write_json(data)
