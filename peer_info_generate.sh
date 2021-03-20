@@ -1,5 +1,5 @@
 #!/bin/sh
-# We run this like this !!!
+# We run this like this 
 echo "Exporting configuration to workfile..."
 cat /etc/cjdroute.conf | cjdroute --cleanconf > cjdroute.conf
 echo "Backup existing configuration..."
