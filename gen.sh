@@ -11,7 +11,7 @@ if [ -f /etc/cjdroute.conf ]; then
 else
 	cjdroute --genconf | cjdroute --cleanconf > cjdroute.conf;
 fi
-python appendPeers.py
+python3 appendPeers.py
 cat cjdroute.conf > /etc/cjdroute.conf
 echo "Restart cjdns to get the new configuration up..."
 systemctl restart cjdns
