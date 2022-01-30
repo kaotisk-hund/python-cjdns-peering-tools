@@ -17,24 +17,19 @@ Either from:
 ```
 git clone https://github.com/kaotisk-hund/python-cjdns-peering-tools.git
 ```
-- arching-kaos.net
-```
-git clone https://git.arching-kaos.net/kaotisk/python-cjdns-peering-tools.git
-```
+
 - cjdns
 ```
 git clone http://git.kaotisk-hund.com/kaotisk/python-cjdns-peering-tools.git
 ```
-and then cd to it:
+and then change directory to the cloned repository:
 ```
 cd python-cjdns-peering-tools
 ```
 
 ### Install peers from `peers.json` file:
 
-The following script is going to either generate or clean off comments your configuration file,
-execute the python script `appendPeers.py`, which will add `peers.json` to your file and install
-to default place (/etc/cjdroute.conf). It also restart cjdns for the configuration to be applied.
+The following script is going to either generate or clean off comments your configuration file, execute the python script `appendPeers.py`, which will add `peers.json` to your file (cjdroute.conf) and install to default place (/etc/). It also restarts cjdns for the configuration to be applied.
 ```
 sudo ./gen.sh
 ```
@@ -69,6 +64,7 @@ This is a generated file by `peer_info_generate.py` which contains the peering i
 You should manually change `0.0.0.0` to your public IP4. #TODO Script for that
 
 ### `peers.json`
-File with peering information. Inside there are two working servers from [Arching Kaos Project](https://arching-kaos.net).
+File with peering information. Inside there are three working servers from [Arching Kaos Project](https://arching-kaos.net).
 
-You can use https://github.com/hyperboria/peers to generate `peers.json`
+You can use https://github.com/hyperboria/peers to generate a custom `peers.json` file.
+
