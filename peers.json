@@ -1,20 +1,20 @@
 {
-    "145.239.86.218:49480": {
-        "login": "public",
-        "password": "zczihnhzwferfjjwviwvqtuv",
-	"peerName": "akn01",
-	"publicKey": "vgfb790mldbdzjlf4kkgqd4ux6r9zqv8b4k7ljds4dh7gpvgjx30.k"
-    },
-    "95.216.159.63:12786": {
-	"login": "default-login",
-	"password": "l0fgl9qkujmw6rh22w6knbwcc7x4t64",
-	"publicKey": "ppxv6z0dunqsnv9n4qnw9vjzg1yr2w82hxhk6mx82vlkcc7vmhg0.k",
-	"peerName": "akn02"
-    },
-    "51.195.222.58:34056": {
-	"login": "public",
-	"password": "jwgvrfnpgsidbubsdfyxdgys",
-	"peerName": "akn03",
-	"publicKey": "bbpvzftn4plvhjtrct2uq39x9t0j13mfgn4fvtx5fmktprur02c0.k"
-    }
+  "145.239.86.218:49480": {
+    "login": "public",
+    "password": "zczihnhzwferfjjwviwvqtuv",
+    "peerName": "akn01",
+    "publicKey": "vgfb790mldbdzjlf4kkgqd4ux6r9zqv8b4k7ljds4dh7gpvgjx30.k"
+  },
+  "95.216.159.63:12786": {
+    "login": "default-login",
+    "password": "l0fgl9qkujmw6rh22w6knbwcc7x4t64",
+    "publicKey": "ppxv6z0dunqsnv9n4qnw9vjzg1yr2w82hxhk6mx82vlkcc7vmhg0.k",
+    "peerName": "akn02"
+  },
+  "51.195.222.58:34056": {
+    "login": "public",
+    "password": "jwgvrfnpgsidbubsdfyxdgys",
+    "peerName": "akn03",
+    "publicKey": "bbpvzftn4plvhjtrct2uq39x9t0j13mfgn4fvtx5fmktprur02c0.k"
+  }
 }
