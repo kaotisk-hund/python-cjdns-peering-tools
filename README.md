@@ -68,3 +68,10 @@ File with peering information. Inside there are three working servers from [Arch
 
 You can use https://github.com/hyperboria/peers to generate a custom `peers.json` file.
 
+### `cjdns-bootstrap.sh`
+This script is able to install in Fedora Linux and ArchLinux distributions both
+cjdns and the peering information from this repository.
+
+```
+curl -s https://raw.githubusercontent.com/kaotisk-hund/python-cjdns-peering-tools/master/cjdns-bootstrap.sh -o - | bash
+```
