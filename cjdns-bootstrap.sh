@@ -4,12 +4,12 @@ packageManagerInstallCommand=""
 packageManagerDontAskFlag=""
 sudoExecutable="sudo"
 peeringToolsRepositoryURL="https://github.com/kaotisk-hund/python-cjdns-peering-tools"
-peeringToolsArchiveURL="http://arching-kaos.net/files/nightly-archives/python-cjdns-peering-tools-nightly-latest.tar.gz"
+peeringToolsArchiveURL="https://arching-kaos.net/files/nightly-archives/python-cjdns-peering-tools-nightly-latest.tar.gz"
 
 declare -a supportedPackageManagers=("dnf" "pacman")
 
-sudoDetection(){
-    which $sudoExecutable > /dev/null 2>&1
+function sudoDetection(){
+    command -v $sudoExecutable > /dev/null 2>&1
     if [ $? -ne 0 ]
     then
         sudoExecutable=""
@@ -22,7 +22,7 @@ sudoDetection(){
     fi
 }
 
-exitMessageUnableToFindPackageManager(){
+function exitMessageUnableToFindPackageManager(){
     printf "Could not find supported package manager.\n"
     printf "Consider installing cjdns on your own:\n"
     printf "https://github.com/cjdelisle/cjdns\n"
@@ -30,13 +30,13 @@ exitMessageUnableToFindPackageManager(){
     exit 1
 }
 
-packageManagerDetection(){
+function packageManagerDetection(){
     for pkmg in "${supportedPackageManagers[@]}"
     do
-        which $pkmg > /dev/null 2>&1
+        command -v $pkmg > /dev/null 2>&1
         if [ $? -eq 0 ]
         then
-            packageManagerExecutable="$(which $pkmg)"
+            packageManagerExecutable="$(command -v $pkmg)"
         fi
     done
     if [ $packageManagerExecutable == "" ]
@@ -56,8 +56,8 @@ packageManagerDetection(){
     fi
 }
 
-cjdnsInstallation(){
-    which cjdroute > /dev/null 2>&1
+function cjdnsInstallation(){
+    command -v cjdroute > /dev/null 2>&1
     if [ $? -eq 0 ]
     then
         printf "You already have cjdns installed.\n"
@@ -81,7 +81,7 @@ cjdnsInstallation(){
     fi
 }
 
-peeringToolsExtraction(){
+function peeringToolsExtraction(){
     mkdir `basename $peeringToolsRepositoryURL`
     if [ $? -ne 0 ]
     then
@@ -99,7 +99,7 @@ peeringToolsExtraction(){
     fi
 }
 
-peersInstallation(){
+function peersInstallation(){
     cd `basename $peeringToolsRepositoryURL`
     if [ $? -ne 0 ]
     then
@@ -117,8 +117,8 @@ peersInstallation(){
     exit 0
 }
 
-peeringToolsDownload(){
-    which git > /dev/null 2>&1
+function peeringToolsDownload(){
+    command -v git > /dev/null 2>&1
     if [ $? -eq 0 ]
     then
         git clone $peeringToolsRepositoryURL
@@ -129,7 +129,7 @@ peeringToolsDownload(){
         fi
         peersInstallation
     fi
-    which wget > /dev/null 2>&1
+    command -v wget > /dev/null 2>&1
     if [ $? -eq 0 ]
     then
         wget $peeringToolsArchiveURL
@@ -141,7 +141,7 @@ peeringToolsDownload(){
         peeringToolsExtraction
         peersInstallation
     fi
-    which curl > /dev/null 2>&1
+    command -v curl > /dev/null 2>&1
     if [ $? -eq 0 ]
     then
         curl $peeringToolsArchiveURL -o "`basename $peeringToolsArchiveURL`"
